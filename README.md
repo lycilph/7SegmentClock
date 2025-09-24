@@ -37,5 +37,3 @@ The setup is modular, with two digit modules on each side of the master (e.g., l
 - Homing: On startup, each digit homes using Hall sensor; LED blinks during process.
 - Display updates every minute via steppers.
 ---
-
-This README.md is ready to copy-paste into your GitHub repo. Customize placeholders like repo URL, code filenames, or add images/schematics (e.g., via Fritzing diagrams) for better visuals. If you need sections added/edited, let me know!
