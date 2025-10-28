@@ -4,7 +4,7 @@
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "LED**"
-		(at 0 7.16 0)
+		(at 0 0 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "8b09029b-3662-4d80-9724-6d5e4525621a")
@@ -16,7 +16,7 @@
 		)
 	)
 	(property "Value" "LED Connection"
-		(at 0 8.66 0)
+		(at 0.05 6.11 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "61e030a2-053e-470a-84bc-57a7d22d845c")
@@ -76,8 +76,34 @@
 		(layer "F.CrtYd")
 		(uuid "d0a12f4e-fb24-452e-9583-8e52932208d8")
 	)
+	(fp_text user "+"
+		(at 2.71 -2.15 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5d4e45b8-0ded-4379-ad7e-f6b1ecf082a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "-"
+		(at 2.82 3.16 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "64d099f5-95ca-4c9a-9661-380dadca3e2b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(fp_text user "${REFERENCE}"
-		(at 0 10.16 0)
+		(at 0.05 7.61 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "20704658-abce-4b31-94ec-489cdab5f3c2")

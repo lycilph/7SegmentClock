@@ -1,8 +1,36 @@
-26787200273836423
+26794246913810963
+7_Segment_Clock_Footprint_Library
+ESP32_Connection_Footprint
+
+
+0
+5
+5
+7_Segment_Clock_Footprint_Library
+I2C_Level_Shifter
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+8
+8
+7_Segment_Clock_Footprint_Library
+JST_Connector_Footprint
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
 7_Segment_Clock_Footprint_Library
 LED_Connection_Footprint
 
 
+0
+2
+2
+7_Segment_Clock_Footprint_Library
+Power_Connection_Footprint
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
 0
 2
 2
