@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "3d")(type "KiCad")(uri "C:/Users/morte/Projects/7SegmentClock/Kicad/footprint lib/CrumpPrints.pretty")(options "")(descr ""))
+)

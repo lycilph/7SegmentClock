@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "crumpschemes")(type "Legacy")(uri "C:/Users/morte/Projects/7SegmentClock/Kicad/symbol lib/CrumpSchemes/crumpschemes.lib")(options "")(descr ""))
+)
