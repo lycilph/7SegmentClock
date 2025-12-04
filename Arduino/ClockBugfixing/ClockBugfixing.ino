@@ -32,14 +32,7 @@ RTC_DS1307 rtc;
 DateTime last_time, now;
 TimeSpan difference;
 
-//int8_t direction = 1;
-int8_t switch_input = 0;
 int8_t digit_led = HIGH;
-int8_t green_led = HIGH;
-int8_t yellow_led = LOW;
-int8_t hall_sensor = 0;
-
-bool is_homing = false;
 
 void setup() {
   #ifdef SERIAL_DEBUG
@@ -94,15 +87,6 @@ void setup() {
   button2.interval(10); // DEBOUNCE INTERVAL IN MILLISECONDS
   button2.setPressedState(LOW); // INDICATE THAT THE LOW STATE CORRESPONDS TO PHYSICALLY PRESSING THE BUTTON
 
-  // Initialize ESP32 pins
-  pinMode(switch_pin, INPUT);
-
-  pinMode(led_yellow_pin, OUTPUT);
-  pinMode(led_green_pin, OUTPUT);
-
-  digitalWrite(led_yellow_pin, yellow_led);
-  digitalWrite(led_green_pin, green_led);
-
   // Initialize digit pins
   PCF.write(digit_led_red_pin, digit_led);
 
@@ -140,130 +124,25 @@ void loop() {
       char buf2[] = "YYMMDD-hh:mm:ss";
       Serial.println(now.toString(buf2));
     #endif
-
-    green_led = (green_led == HIGH ? LOW : HIGH);
-    yellow_led = (yellow_led == HIGH ? LOW : HIGH);
-
-    digitalWrite(led_yellow_pin, yellow_led);
-    digitalWrite(led_green_pin, green_led);
   }
 
   button1.update();
   button2.update();
 
-  switch_input = digitalRead(switch_pin);
-  if (switch_input == HIGH) 
+  if (button1.pressed())
   {
-    if (button1.pressed())
-    {
-      #ifdef SERIAL_DEBUG
-        Serial.println("Button 1 pressed");
-      #endif
-      stepper.step(stepsPerNumber);
-      stepper.powerDown();
-    }
-    if (button2.pressed())
-    {
-      #ifdef SERIAL_DEBUG
-        Serial.println("Button 2 pressed");
-      #endif
-      stepper.step(-stepsPerNumber);
-      stepper.powerDown();
-    }
-  }
-  else
-  {
-    if (button1.pressed())
-    {
-      #ifdef SERIAL_DEBUG
-        Serial.println("Button 1 pressed");
-        Serial.println("Homing started");
-      #endif
-      is_homing = true;
-    }
-    if (button2.pressed())
-    {
-      #ifdef SERIAL_DEBUG
-        Serial.println("Button 2 pressed");
-      #endif
-      digit_led = (digit_led == HIGH ? LOW : HIGH);
-      PCF.write(digit_led_red_pin, digit_led);
-    }
-  }
-
-  if (is_homing)
-  {
-    hall_sensor = PCF.read(digit_hall_sensor_pin);
     #ifdef SERIAL_DEBUG
-      Serial.print("Sensor reading: ");
-      Serial.println(hall_sensor);
+      Serial.println("Button 1 pressed");
     #endif
-
-    if (hall_sensor == 1) {
-      stepper.step(1);
-    }
-    else {
-      is_homing = false;
-      stepper.powerDown();
-    }
+    stepper.step(stepsPerNumber);
+    stepper.powerDown();
+  }
+  if (button2.pressed())
+  {
+    #ifdef SERIAL_DEBUG
+      Serial.println("Button 2 pressed");
+    #endif
+    stepper.step(-stepsPerNumber);
+    stepper.powerDown();
   }
 }
-
-// void loop() {
-//   now = rtc.now();
-//   difference = now - last_time;
-
-//   button1.update();
-//   button2.update();
-
-//   switch_input = digitalRead(switch_pin);
-//   if (switch_input == HIGH)
-//   {
-//     direction = 1;
-//     digitalWrite(led_yellow_pin, HIGH);
-//     digitalWrite(led_green_pin, LOW);
-//     stepper.step(1);
-//   }
-//   else
-//   {
-//     direction = -1;
-//     digitalWrite(led_yellow_pin, LOW);
-//     digitalWrite(led_green_pin, HIGH);
-//     stepper.powerDown();
-//   }
-
-//   if (button1.pressed())
-//   {
-//     #ifdef SERIAL_DEBUG
-//       Serial.println("Button 1 pressed");
-//     #endif
-//     stepper.step(direction*stepsPerNumber);
-//     stepper.powerDown();
-//   }
-
-//   if (button2.pressed())
-//   {
-//     #ifdef SERIAL_DEBUG
-//       Serial.println("Button 2 pressed");
-//     #endif
-//     // stepper.step(-1*direction*stepsPerNumber);
-//     // stepper.powerDown();
-
-//     digit_led = (digit_led == HIGH ? LOW : HIGH);
-//     PCF.write(digit_led_red_pin, digit_led);
-//   }
-
-//   if (difference.seconds() > 10)
-//   {
-//     last_time = now;
-    
-//     #ifdef SERIAL_DEBUG
-//       char buf2[] = "YYMMDD-hh:mm:ss";
-//       Serial.println(now.toString(buf2));
-//     #endif
-
-//     digitalWrite(led_yellow_pin, HIGH);
-//     digitalWrite(led_green_pin, HIGH);
-//     delay(500);
-//   }
-// }
