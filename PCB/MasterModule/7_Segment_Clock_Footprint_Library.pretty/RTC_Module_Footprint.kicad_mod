@@ -56,7 +56,7 @@
 	(attr smd)
 	(fp_rect
 		(start -12.7 -5.08)
-		(end 12.7 11.43)
+		(end 15.875 22.86)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -67,7 +67,7 @@
 	)
 	(fp_rect
 		(start -12.7 -5.08)
-		(end 12.7 11.43)
+		(end 15.875 22.86)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -77,7 +77,7 @@
 		(uuid "9de700b6-300d-484a-8217-53b2ad586e7a")
 	)
 	(fp_text user "SCL"
-		(at 3.17 -1.08 270)
+		(at 2.517817 -2.634746 270)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "03900cbb-2e2f-4307-baa1-01f03cae74f7")
@@ -90,7 +90,7 @@
 		)
 	)
 	(fp_text user "SDA"
-		(at 0.61 -1.04 270)
+		(at -0.042183 -2.594746 270)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "1d4f098e-42f1-4e05-beb4-5d922d976a5e")
@@ -102,11 +102,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "-"
-		(at -1.95 -0.26 0)
+	(fp_text user "GND"
+		(at -5.08 -2.54 270)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "89278caf-009d-4c88-b023-c71c38c5d3e3")
+		(uuid "28ffbf51-1d9d-4384-8395-2dc8bd5b3c79")
 		(effects
 			(font
 				(size 1 1)
@@ -115,11 +115,11 @@
 			(justify left bottom)
 		)
 	)
-	(fp_text user "+"
-		(at -4.52 -0.47 0)
+	(fp_text user "VCC"
+		(at -2.54 -2.54 270)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "ef89d1cb-6377-4221-b26c-49ad1ed86552")
+		(uuid "b1545f3c-62e7-419f-807e-0fc4d7497d08")
 		(effects
 			(font
 				(size 1 1)
@@ -141,7 +141,7 @@
 		)
 	)
 	(pad "1" thru_hole roundrect
-		(at -3.81 -2.54)
+		(at -4.462183 -4.094746)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
@@ -150,7 +150,7 @@
 		(uuid "3387d305-0e81-4c81-a6f5-6dbc2cafad8d")
 	)
 	(pad "2" thru_hole circle
-		(at -1.27 -2.54)
+		(at -1.922183 -4.094746)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
@@ -158,7 +158,7 @@
 		(uuid "9679dc76-4454-4272-bd23-ec229b2f49a3")
 	)
 	(pad "3" thru_hole circle
-		(at 1.27 -2.54)
+		(at 0.617817 -4.094746)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
@@ -166,7 +166,7 @@
 		(uuid "5200772d-ecd3-48b1-a750-898f068120e7")
 	)
 	(pad "4" thru_hole circle
-		(at 3.81 -2.54)
+		(at 3.157817 -4.094746)
 		(size 1.7 1.7)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
